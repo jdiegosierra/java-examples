@@ -1,15 +1,35 @@
 package practica1;
 
 public class Dama {
-	
+	static final char BLANCO = 'B';
+	static final char NEGRO = 'N';
 	private char color;
+	private String movimiento;
+	
+	public Dama(boolean negro) {
+		pintaNegro(negro);
+		if(negro)
+			movimiento = "diagonal adelante";
+		else
+			movimiento = "diagonal atras";
+	}
 	
 	public char dameColor() {
 		return color;
 	}
 	
-	public void pintaColor(char color) {
-		this.color = color;
+	public String dameMovimiento() {
+		if(dameColor() == BLANCO)
+			return movimiento;
+		else
+			return movimiento;
+	}
+	
+	public void pintaNegro(boolean negro) {
+		if (negro)
+			color = NEGRO;
+		else
+			color = BLANCO;
 	}
 	
 	public void imprimeColor() {
@@ -17,7 +37,7 @@ public class Dama {
 	}
 	
 	public Boolean comparaColor(Dama dama) {
-		return color == dama.dameColor();
+		return color == dameColor();
 	}
 
 }
